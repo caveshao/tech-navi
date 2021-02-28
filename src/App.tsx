@@ -1,27 +1,19 @@
 import React from "react";
+import { Router, Switch, Route } from "react-router-dom"
+import { createBrowserHistory } from 'history'
+import Card from './components/Card/Card'
 import logo from "./logo.svg";
 import "./App.less";
 import styles from "./components/Card/styles.module.less";
 
+const history = createBrowserHistory()
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className={styles.test}
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <Router history={history}>
+    <Switch>
+      <Route path="/home" component={Card}></Route>
+    </Switch>
+  </Router>
 }
 
 export default App;
