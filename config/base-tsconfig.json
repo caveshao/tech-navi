@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "../src/*"
+            ],
+            "@apis/*": [
+                "../src/apis/*"
+            ],
+            "@components/*": [
+                "../src/components/*"
+            ]
+        },
+        "isolatedModules": false
+    }
+}

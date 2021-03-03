@@ -1,5 +1,6 @@
-const { override, addLessLoader } = require("customize-cra");
+const { override, addLessLoader, addWebpackAlias } = require("customize-cra");
+const path = require("path")
 
-module.exports = override(
-  addLessLoader()
-);
+module.exports = override(addWebpackAlias({
+    "@": path.resolve(__dirname,"src")
+}), addLessLoader());

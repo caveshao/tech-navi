@@ -1,8 +1,7 @@
 import React from "react";
 import { Router, Switch, Route } from "react-router-dom"
 import { createBrowserHistory } from 'history'
-import Card from './components/Card/Card'
-import logo from "./logo.svg";
+import Card from '@/components/Card/Card'
 import "./App.less";
 import styles from "./components/Card/styles.module.less";
 
