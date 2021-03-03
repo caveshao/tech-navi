@@ -3,7 +3,6 @@ import { Router, Switch, Route } from "react-router-dom"
 import { createBrowserHistory } from 'history'
 import HomePage from '@/pages/HomePage'
 import "./App.less";
-import styles from "./components/Card/styles.module.less";
 
 const history = createBrowserHistory()
 
