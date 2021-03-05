@@ -3,7 +3,7 @@ import styles from "./styles.module.less";
 const HomePage = () => {
   return (
     <div className={styles.SearchBarContainer}>
-      <SearchBar />
+      <SearchBar placeholder="搜索" />
     </div>
   );
 };

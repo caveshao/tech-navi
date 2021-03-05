@@ -11,14 +11,10 @@ const suffix = (
   />
 );
 export interface SearchProps {
-  placeholder?: string;
-  enterButton?: string;
-  size?: string;
-  suffix?: React.ReactNode;
-  onSearch?: () => void;
+  placeholder?: string
 }
 
-const SearchBar = (props: SearchProps) => {
+const SearchBar = ({placeholder}: SearchProps) => {
   const onSearch = () => {
     console.log("search");
   };
@@ -29,7 +25,7 @@ const SearchBar = (props: SearchProps) => {
       </Col>
       <Col span={7}>
         <Search
-          placeholder="搜索"
+          placeholder={placeholder}
           enterButton="Search"
           size="middle"
           suffix={suffix}
