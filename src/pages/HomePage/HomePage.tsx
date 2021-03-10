@@ -3,9 +3,10 @@ import Setting from "@/components/Setting/Setting";
 import Dock from "@/components/Dock/Dock";
 
 import styles from "./styles.module.less";
+
 const HomePage = () => {
   return (
-    <div className={styles.SearchBarContainer}>
+    <div className={styles.searchBarContainer}>
       <SearchBar placeholder="搜索" />
       <Setting />
       <Dock />
