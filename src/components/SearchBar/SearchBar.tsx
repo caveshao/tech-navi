@@ -6,6 +6,8 @@ import styles from "./SearchBar.module.less";
 
 export interface SearchProps {
   placeholder?: string;
+  onFocus?: () => void;
+  onBlur?: () => void;
 }
 
 // type engine = "google" | "baidu";
@@ -24,13 +26,13 @@ const suffix = (
   />
 );
 
-const SearchBar = ({ placeholder }: SearchProps) => {
+const SearchBar = ({ placeholder, onFocus, onBlur }: SearchProps) => {
   const [searchEngine, setSearchEngine] = useState<Engine>(Engine.baidu);
   const onEngineChange = (checked: boolean) =>
     setSearchEngine(checked ? Engine.google : Engine.baidu);
   const onSearch = () => {};
   return (
-    <>
+    <div className={styles.searchEngine}>
       <h1 className={styles.title}>{searchEngine}</h1>
       <Row justify="center" align="middle">
         <Col span={1}>
@@ -47,11 +49,13 @@ const SearchBar = ({ placeholder }: SearchProps) => {
             enterButton="Search"
             size="middle"
             suffix={suffix}
+            onFocus={onFocus}
+            onBlur={onBlur}
             onSearch={onSearch}
           />
         </Col>
       </Row>
-    </>
+    </div>
   );
 };
 
