@@ -6,6 +6,18 @@ import Dock from "@/components/Dock/Dock";
 
 import styles from "./styles.module.less";
 
+const settingOptions = [
+  {
+    name: "share",
+  },
+  {
+    name: "background",
+  },
+  {
+    name: "addApp",
+  },
+];
+
 const HomePage = () => {
   const maskRef = useRef<HTMLDivElement | null>(null);
   const controlMask = (show: boolean) => {
@@ -21,7 +33,7 @@ const HomePage = () => {
   return (
     <div className={styles.home}>
       <SearchBar placeholder="搜索" onFocus={onFocus} onBlur={onBlur} />
-      <Setting />
+      <Setting options={settingOptions} />
       <Dock />
       <div className={styles.mask} ref={maskRef}></div>
     </div>
