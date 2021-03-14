@@ -19,6 +19,11 @@ const Setting = ({ options }: SettingProps) => {
       <Button type="text" size="large" onClick={handleClick}>
         <SettingOutlined />
       </Button>
+      <div className={styles.options}>
+        {options.map((item,index) => (
+          <span key={item.name + index}>{item.name}</span>
+        ))}
+      </div>
     </div>
   );
 };
