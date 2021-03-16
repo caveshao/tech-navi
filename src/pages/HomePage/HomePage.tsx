@@ -1,3 +1,5 @@
+import _ from "lodash"
+
 import { useState, useRef } from "react";
 
 import SearchBar from "@/components/SearchBar/SearchBar";
