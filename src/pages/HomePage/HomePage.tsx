@@ -1,6 +1,7 @@
 import _ from "lodash"
 
 import { useState, useRef } from "react";
+import {EditOutlined, PictureOutlined ,PlusOutlined } from "@ant-design/icons"
 
 import SearchBar from "@/components/SearchBar/SearchBar";
 import Setting from "@/components/Setting/Setting";
@@ -11,12 +12,15 @@ import styles from "./styles.module.less";
 const settingOptions = [
   {
     name: "share",
+    icon:<EditOutlined />
   },
   {
     name: "background",
+    icon: <PictureOutlined />
   },
   {
     name: "addApp",
+    icon: <PlusOutlined />
   },
 ];
 
