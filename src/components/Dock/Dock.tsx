@@ -1,7 +1,18 @@
-import styles from "./Dock.module.less"
+import React from "react";
+import styles from "./Dock.module.less";
 
-const Dock = () => {
-    return <h1 className={styles.dock}>Bottom</h1>
+export interface DockProps {
+  apps?: { icon: React.ReactNode }[];
 }
 
-export default Dock
+const Dock = ({ apps }: DockProps) => {
+  return (
+    <h1 className={styles.dock}>
+      {apps?.map((item, index) => (
+        <div>{item.icon}</div>
+      ))}
+    </h1>
+  );
+};
+
+export default Dock;

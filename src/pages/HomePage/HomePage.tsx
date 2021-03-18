@@ -1,7 +1,7 @@
 import _ from "lodash"
 
 import { useState, useRef } from "react";
-import {EditOutlined, PictureOutlined ,PlusOutlined } from "@ant-design/icons"
+import {EditOutlined, PictureOutlined ,PlusOutlined,UpCircleTwoTone } from "@ant-design/icons"
 
 import SearchBar from "@/components/SearchBar/SearchBar";
 import Setting from "@/components/Setting/Setting";
@@ -24,6 +24,10 @@ const settingOptions = [
   },
 ];
 
+const apps = [{
+    icon: <UpCircleTwoTone />
+}]
+
 const HomePage = () => {
   const maskRef = useRef<HTMLDivElement | null>(null);
   const controlMask = (show: boolean) => {
@@ -40,7 +44,7 @@ const HomePage = () => {
     <div className={styles.home}>
       <SearchBar placeholder="搜索" onFocus={onFocus} onBlur={onBlur} />
       <Setting options={settingOptions} />
-      <Dock />
+      <Dock apps={apps}/>
       <div className={styles.mask} ref={maskRef}></div>
     </div>
   );
