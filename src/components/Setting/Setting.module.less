@@ -1,18 +1,28 @@
 .setting {
-    position: fixed;
-    top: 20px;
-    right: 20px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
 }
 
 .options {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  > span {
+    opacity: 0;
+  }
+}
+
+.show {
+    > span {
+        opacity: 1;
+    }
 }
 
 .option {
-    flex: 45%;
-    text-align: center;
- }
+  flex: 45%;
+  text-align: center;
+  transition: opacity .5s ease-in-out;
+}

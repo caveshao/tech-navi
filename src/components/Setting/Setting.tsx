@@ -6,7 +6,7 @@ import styles from "./Setting.module.less";
 export interface SettingProps {
   options: {
     name: string;
-    icon: React.ReactNode
+    icon: React.ReactNode;
   }[];
 }
 const Setting = ({ options }: SettingProps) => {
@@ -16,19 +16,30 @@ const Setting = ({ options }: SettingProps) => {
   };
   return (
     <div className={styles.setting}>
-      <div className={styles.options}>
+      <div className={`${styles.options} ${setting ? styles.show : ""}`}>
         {options.map((item, index) => {
           if (index === 0) {
             return (
               <>
-                <span key={item.name + index} className={styles.option}>{item.icon}</span>
-                <Button type="text" size="large" className={styles.option} onClick={handleClick}>
+                <span key={item.name + index} className={styles.option}>
+                  {item.icon}
+                </span>
+                <Button
+                  type="text"
+                  size="large"
+                  className={`${styles.option}`}
+                  onClick={handleClick}
+                >
                   <SettingOutlined />
                 </Button>
               </>
             );
           }
-          return <span key={item.name + index} className={styles.option}>{item.icon}</span>;
+          return (
+            <span key={item.name + index} className={`${styles.option}`}>
+              {item.icon}
+            </span>
+          );
         })}
       </div>
     </div>
