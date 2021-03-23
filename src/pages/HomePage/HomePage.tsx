@@ -1,7 +1,12 @@
-import _ from "lodash"
+import _ from "lodash";
 
 import { useState, useRef } from "react";
-import {EditOutlined, PictureOutlined ,PlusOutlined,UpCircleTwoTone } from "@ant-design/icons"
+import {
+  EditOutlined,
+  PictureOutlined,
+  PlusOutlined,
+  UpCircleTwoTone,
+} from "@ant-design/icons";
 
 import SearchBar from "@/components/SearchBar/SearchBar";
 import Setting from "@/components/Setting/Setting";
@@ -12,21 +17,23 @@ import styles from "./styles.module.less";
 const settingOptions = [
   {
     name: "share",
-    icon:<EditOutlined />
+    icon: <EditOutlined />,
   },
   {
     name: "background",
-    icon: <PictureOutlined />
+    icon: <PictureOutlined />,
   },
   {
     name: "addApp",
-    icon: <PlusOutlined />
+    icon: <PlusOutlined />,
   },
 ];
 
-const apps = [{
-    icon: <UpCircleTwoTone />
-}]
+const apps = [
+  {
+    icon: <UpCircleTwoTone />,
+  },
+];
 
 const HomePage = () => {
   const maskRef = useRef<HTMLDivElement | null>(null);
@@ -44,8 +51,14 @@ const HomePage = () => {
     <div className={styles.home}>
       <SearchBar placeholder="搜索" onFocus={onFocus} onBlur={onBlur} />
       <Setting options={settingOptions} />
-      <Dock apps={apps}/>
+      <Dock apps={apps} />
       <div className={styles.mask} ref={maskRef}></div>
+      <iframe
+        id="bg-iframe"
+        title="bg"
+        scrolling="no"
+        src="https://kimstatic.hao1258.com/group1/kimzhuye/b4/91/oQu6W3YaPZEQPB8CMcCUqYyOxXuU_8173.htm"
+      ></iframe>
     </div>
   );
 };
