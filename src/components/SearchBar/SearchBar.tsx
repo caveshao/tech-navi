@@ -12,8 +12,8 @@ export interface SearchProps {
 
 // type engine = "google" | "baidu";
 enum Engine {
-  google = "google",
-  baidu = "baidu",
+  google = "Google",
+  baidu = "Baidu",
 }
 
 const { Search } = Input;
