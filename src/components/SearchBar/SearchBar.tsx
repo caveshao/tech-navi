@@ -18,7 +18,7 @@ enum Engine {
 
 const engineUrl = {
   [Engine.google]:'https://www.google.com/search',
-  [Engine.baidu]:'https://www.baidu.com/s'
+  [Engine.baidu]:'https://www.baidu.com/s',
 }
 
 const { Search } = Input;
