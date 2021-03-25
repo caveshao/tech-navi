@@ -14,6 +14,11 @@ export interface SearchProps {
 enum Engine {
   google = "Google",
   baidu = "Baidu",
+ }
+
+const engineUrl = {
+  [Engine.google]:'https://www.google.com/search',
+  [Engine.baidu]:'https://www.baidu.com/s'
 }
 
 const { Search } = Input;
@@ -30,7 +35,10 @@ const SearchBar = ({ placeholder, onFocus, onBlur }: SearchProps) => {
   const [searchEngine, setSearchEngine] = useState<Engine>(Engine.baidu);
   const onEngineChange = (checked: boolean) =>
     setSearchEngine(checked ? Engine.google : Engine.baidu);
-  const onSearch = () => {};
+  const onSearch = (value:string) => {
+    const link =  engineUrl[searchEngine]
+    window.location.href = `${link}?ie=UTF-8&q=${encodeURIComponent(value)}&wd=${encodeURIComponent(value)}`
+  };
   return (
     <div className={styles.searchEngine}>
       <h1 className={styles.title}>{searchEngine}</h1>
