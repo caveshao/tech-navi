@@ -56,7 +56,7 @@ const HomePage = () => {
       <iframe
         id="bg-iframe"
         title="bg"
-        scrolling="no"
+        scrolling="no" 
         src="https://kimstatic.hao1258.com/group1/kimzhuye/7f/7d/oyd-8TTizTpXLwyPm6RvwAye-Pzk_7237.html"
       ></iframe>
     </div>
