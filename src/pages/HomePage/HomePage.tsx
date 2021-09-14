@@ -49,7 +49,7 @@ const HomePage = () => {
   };
   return (
     <div className={styles.home}>
-      <SearchBar placeholder="搜索" onFocus={onFocus} onBlur={onBlur} />
+      <SearchBar onFocus={onFocus} onBlur={onBlur} />
       <Setting options={settingOptions} />
       <Dock apps={apps} />
       <div className={styles.mask} ref={maskRef}></div>
